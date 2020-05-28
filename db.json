@@ -1,25 +1,32 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 005",
-      "attention": false,
-      "date": "2020-03-02",
-      "tech": "Ryan McDonagh"
-    },
-    {
-      "id": 2,
-      "message": "Workstation 007 not posting",
+      "message": "Hard Drive Failed on WorkStation #2",
       "attention": true,
-      "date": "2020-03-02",
-      "tech": "Ryan McDonagh"
+      "tech": "John Doe",
+      "date": "2020-05-27T20:38:10.757Z",
+      "id": 1
     },
     {
-      "id": 3,
-      "message": "Changed memory on workstation 050",
+      "message": "Replaced Cable on WorkStation #254",
       "attention": false,
-      "date": "2020-03-02",
-      "tech": "Norah McDonagh"
+      "tech": "Frank Jones",
+      "date": "2020-05-27T20:38:42.510Z",
+      "id": 2
+    },
+    {
+      "message": "Testing Log Message Test",
+      "attention": true,
+      "tech": "Jessica McDonagh",
+      "date": "2020-05-28T18:57:10.303Z",
+      "id": 3
+    },
+    {
+      "message": "Testing New Log",
+      "attention": true,
+      "tech": "Norah McDonagh",
+      "date": "2020-05-28T20:30:22.665Z",
+      "id": 4
     }
   ],
   "techs": [

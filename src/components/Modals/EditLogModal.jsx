@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import M from "materialize-css/dist/js/materialize.min.js";
+import { getTechs } from "../../actions/techActions";
 
-const EditLogModal = () => {
+const EditLogModal = ({ technicians: { techs, loading }, updateLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
+
+  useEffect(() => {
+    getTechs();
+  }, []);
 
   const onSubmit = () => {
     if (message === "" || tech === "") {
       M.toast({ html: "Please enter a message and tech" });
     } else {
-      console.log(message, tech, attention);
+      const updatedLog = {
+        message,
+        tech,
+        attention,
+        date: new Date(),
+      };
+      updateLog(updatedLog);
       // Clear fields
       setMessage("");
       setTech("");
@@ -46,9 +58,20 @@ const EditLogModal = () => {
               <option value="" disabled>
                 Select Technician
               </option>
-              <option value="John Doe">John Doe</option>
-              <option value="Jane Smith">Jane Smith</option>
-              <option value="Frank Jones">Frank Jones</option>
+              {!loading && techs === null ? (
+                <option value="" disabled>
+                  Select Technician
+                </option>
+              ) : (
+                techs.map((tech) => (
+                  <option
+                    value={tech.firstName + " " + tech.lastName}
+                    key={tech.id}
+                  >
+                    {tech.firstName + " " + tech.lastName}
+                  </option>
+                ))
+              )}
             </select>
           </div>
         </div>
@@ -87,4 +110,11 @@ const modalStyle = {
   height: "75%",
 };
 
-export default EditLogModal;
+const mapStateToProps = (state) => ({
+  technicians: state.tech,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getTechs: () => dispatch(getTechs()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(EditLogModal);
