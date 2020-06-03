@@ -13,37 +13,13 @@
       "tech": "Frank Jones",
       "date": "2020-05-27T20:38:42.510Z",
       "id": 2
-    },
-    {
-      "message": "Testing Log Message Test",
-      "attention": true,
-      "tech": "Jessica McDonagh",
-      "date": "2020-05-28T18:57:10.303Z",
-      "id": 3
-    },
-    {
-      "message": "Testing New Log",
-      "attention": true,
-      "tech": "Norah McDonagh",
-      "date": "2020-05-28T20:30:22.665Z",
-      "id": 4
     }
   ],
   "techs": [
     {
-      "id": 1,
-      "firstName": "Ryan",
-      "lastName": "McDonagh"
-    },
-    {
-      "id": 2,
-      "firstName": "Jessica",
-      "lastName": "McDonagh"
-    },
-    {
-      "id": 3,
       "firstName": "Norah",
-      "lastName": "McDonagh"
+      "lastName": "McDonagh",
+      "id": 2
     }
   ]
 }
